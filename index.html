@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Interactive Video</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- jQuery -->
+	<script src="js/jquery-1.12.3.min.js"></script>
+
+	<!-- Skeleton CSS & Featherlight -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/featherlight.css">
+	<script src="js/featherlight.js"></script>
+
+	<!-- Interaction CSS -->
+	<link rel="stylesheet" href="css/interaction.css">
+
+	<!-- Interaction js -->
+	<script src="js/interaction.js"></script>
+
+	<!-- GreenSock -->
+	<script src="js/TweenMax.min.js"></script>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="row videoArea" style="width:80%;margin:auto;">
+			<div id="ShowBox">
+				<div class="lightbox box1" id="box1"> </div>
+				<div class="lightbox box2" id="box2"> </div>
+				<div class="lightbox box3" id="box3"> </div>
+				<div class="lightbox box4" id="box4"> </div>
+				<div class="lightbox box5" id="box5"> </div>
+				<div class="lightbox box6" id="box6"> </div>
+				<div class="lightbox box7" id="box7"> </div>
+				<div class="lightbox box8" id="box8"> </div>
+				<div class="lightbox box9" id="box9"> </div>
+				<div class="lightbox box10" id="box10"> </div>
+				<!--<div class="lightbox box11" id="box11">			</div>
+			<div class="lightbox box12" id="box12">			</div>
+			<div class="lightbox box13" id="box13">			</div>
+			<div class="lightbox box14" id="box14">			</div>
+			<div class="lightbox box15" id="box15">			</div>
+			<div class="lightbox box16" id="box16">			</div>
+			<div class="lightbox box17" id="box17">			</div>
+			<div class="lightbox box18" id="box18">			</div>  -->
+
+
+				<!-- muted="true" controls -->
+				<video id="video1" src="media/final.mp4" controlsList='nofullscreen' onclick="MAXScreen()" style="background-color:grey"></video>
+				<!-- Your browser does not support the video tag! -->
+				</video>
+			</div>
+		</div>
+
+		<!-- <div >
+			<h4>Threshold</h4>
+			<h4 style="float:right" onclick="MAXScreen()"> PLAY </h4>
+			<p>This is an interactive video</p>
+			<p>Click "PLAY". Enjoy.</p>
+		</div> -->
+		<div style="width:20%;margin:auto;">
+			<img src="images/Play_button.png" style="width:100%;"  onclick="MAXScreen()">
+		</div>
+
+	</div>
+	<!-- the end of container-->
+
+	<script>
+		getvideoprogress();
+
+		// 全屏和播放 别点两次
+		function MAXScreen() {
+			document.getElementById("ShowBox").requestFullscreen();
+			let vv = document.getElementById("video1");
+			vv.play();
+			//
+			if (vv.currentTime < 1) vv.currentTime = 1.5;
+		};
+
+		function getvideoprogress() {
+			setTimeout(function () {
+				var vid = document.getElementById("video1");
+				var currentTime = vid.currentTime.toFixed(1);
+				// choice start
+				if (currentTime == 126) {
+					$('#box1').css('display', 'block');
+					$('#box2').css('display', 'block');
+				}
+
+				if (currentTime == 241) {
+					$('#box3').css('display', 'block');
+					$('#box4').css('display', 'block');
+				}
+
+				if (currentTime == 540) {
+					$('#box5').css('display', 'block');
+					$('#box6').css('display', 'block');
+				}
+
+				if (currentTime == 697) {
+					$('#box7').css('display', 'block');
+					$('#box8').css('display', 'block');
+				}
+
+				if (currentTime == 813) {
+					$('#box9').css('display', 'block');
+					$('#box10').css('display', 'block');
+				}
+
+
+
+				// console.log(currentTime);
+				if (currentTime == 135) {
+					video1[0].currentTime = 146;
+				} // A1HL jump to A1 start
+
+				if (currentTime == 140) {
+					video1[0].currentTime = 141;
+				} // B1HL jump to B1 start
+
+				if (currentTime == 145.5) {
+					video1[0].currentTime = 157;
+				} // A1 jump to B1 end
+
+				if (currentTime == 258) {
+					video1[0].currentTime = 270;
+				} // A2HL jump to A2 start
+
+				if (currentTime == 269) {
+					video1[0].currentTime = 290;
+				} // B2HL jump to B2 start
+
+				if (currentTime == 289) {
+					video1[0].currentTime = 920;
+				} // A2(Bad end) jump to end
+
+				if (currentTime == 557) {
+					video1[0].currentTime = 570;
+				} // A3HL jump to A3 start
+
+				if (currentTime == 568) {
+					video1[0].currentTime = 587;
+				} // B3HL jump to B3 start
+
+				if (currentTime == 586) {
+					video1[0].currentTime = 920;
+				} // A3(Bad end) jump to end
+
+				if (currentTime == 715) {
+					video1[0].currentTime = 727;
+				} // A4HL jump to A4 start
+
+				if (currentTime == 726) {
+					video1[0].currentTime = 749;
+				} // B4HL jump to B4 start
+
+				if (currentTime == 747) {
+					video1[0].currentTime = 920;
+				} // A4(Bad end) jump to end
+
+				if (currentTime == 828) {
+					video1[0].currentTime = 867;
+				} // A5HL jump to A5 start
+
+				if (currentTime == 836) {
+					video1[0].currentTime = 838;
+				} // B5HL jump to B5 start
+
+				if (currentTime == 866) {
+					video1[0].currentTime = 920;
+				} // A5(Bad end) jump to end
+
+				if (currentTime == 130) {
+					video1[0].currentTime = 126;
+				} // IF YOU DO NOT HAVE ANY CHOICE GO BACK TO THE BEGINNING 1
+
+				if (currentTime == 249) {
+					video1[0].currentTime = 241;
+				} // IF YOU DO NOT HAVE ANY CHOICE GO BACK TO THE BEGINNING 2
+
+				if (currentTime == 548) {
+					video1[0].currentTime = 540;
+				} // IF YOU DO NOT HAVE ANY CHOICE GO BACK TO THE BEGINNING 3
+
+				if (currentTime == 705) {
+					video1[0].currentTime = 698;
+				} // IF YOU DO NOT HAVE ANY CHOICE GO BACK TO THE BEGINNING 4
+
+				if (currentTime == 819) {
+					video1[0].currentTime = 813;
+				} // IF YOU DO NOT HAVE ANY CHOICE GO BACK TO THE BEGINNING 5
+
+
+
+
+
+				getvideoprogress();
+			}, 50);
+		}
+	</script>
+
+
+
+
+</body>
+
+</html>
+
+
+<!-- backup -->
+<script>
+	// var tmp = setTimeout("showBox()",2000);
+	// function showBox(){
+	// 	var Media = document.getElementById("video1");
+	// 	// $('.lightbox').css('display', 'block');
+	// };
+</script>
